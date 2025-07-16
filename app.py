@@ -10,7 +10,7 @@ from datetime import datetime
 import uuid
 
 app = Flask(__name__)
-app.secret_key = 'sua_chave_secreta_super_secreta_e_longa_aqui_12345!@#$'
+app.secret_key = 'dcd8df3c4cb2cbc80c742263ad63e548cc9e2477e7229c8d'
 UPLOAD_FOLDER = "uploads"
 RESULTS_FOLDER = "resultados"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -62,8 +62,8 @@ def buscar_produto(ean):
 
             if page.locator("div.productName").count() > 0:
                 nome = page.locator("div.productName").first.inner_text()
-                preco = page.locator("strong.skuBestPrice").first.inner_text() if page.locator("strong.skuBestPrice").count() else ""
-                promo = page.locator("strong.skuListPrice").first.inner_text() if page.locator("strong.skuListPrice").count() else ""
+                preco = page.locator("strong.skuListPrice").first.inner_text() if page.locator("strong.skuListPrice").count() else ""
+                promo = page.locator("strong.skuBestPrice").first.inner_text() if page.locator("strong.skuBestPrice").count() else ""
                 link = page.url
 
                 print(f"✅ Produto encontrado: {nome}")
@@ -151,7 +151,7 @@ def start_processing(session_id):
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         csv_filename = f"resultados_{timestamp}.csv"
         csv_path = os.path.join(RESULTS_FOLDER, csv_filename)
-        pd.DataFrame(resultados).to_csv(csv_path, index=False, encoding='utf-8-sig')
+        pd.DataFrame(resultados).to_csv(csv_path, index=False, encoding='utf-8-sig', sep=';')
         
         yield f"data: {json.dumps({'done': True, 'file': csv_filename})}\n\n"
 
