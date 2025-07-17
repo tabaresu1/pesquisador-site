@@ -138,7 +138,8 @@ def start_processing(session_id):
                 'total': total,
                 'percentage': int((i / total) * 100),
                 'ean': cod,
-                'status': produto['Status']
+                'status': produto['Status'],
+                'produto': produto['Produto'],
             }
             yield f"data: {json.dumps(progresso)}\n\n"
 

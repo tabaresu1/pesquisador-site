@@ -39,6 +39,10 @@
         <span>Status:</span>
         <span id="current-status" class="font-medium">-</span>
       </div>
+      <div class="flex justify-between text-sm text-gray-600">
+        <span>Produto:</span>
+        <span id="current-product" class="font-medium truncate max-w-[250px] text-right">-</span>
+      </div>
     </div>
     
     <div id="result-section" class="hidden"></div>
@@ -61,12 +65,10 @@
                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                   Baixar Resultados (CSV)
                 </a>
-                
                 <br>
-    
                 <a href="/" 
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50">
-                ⬅️ Voltar ao Início
+                   class="inline-flex items-center mt-4 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50">
+                  ⬅️ Voltar ao Início
                 </a>
               </div>
             `;
@@ -82,6 +84,7 @@
           document.getElementById('total').textContent = data.total;
           document.getElementById('current-ean').textContent = data.ean;
           document.getElementById('current-status').textContent = data.status;
+          document.getElementById('current-product').textContent = data.produto || '-';
 
         } catch (error) {
           console.error("Erro ao processar mensagem:", error);
