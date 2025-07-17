@@ -1,13 +1,20 @@
-# 🧪 EAN Price Scanner – Consulta de Preços Drogaria São Paulo
 
-Ferramenta web que permite fazer o upload de um PDF contendo códigos EAN (códigos de barras) e consulta automaticamente os preços dos produtos no site da [Drogaria São Paulo](https://www.drogariasaopaulo.com.br).
+# 🧪 EAN Price Scanner
+[![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Playwright](https://img.shields.io/badge/Playwright-2EAD33.svg?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/python/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+
+Ferramenta web que permite fazer o upload de um PDF contendo códigos EAN (códigos de barras) e consulta automaticamente os preços dos produtos no site que você desejar.
 
 ---
 
 ## 📦 Funcionalidades
 
 - Extração automática de códigos EAN de arquivos PDF
-- Consulta dos produtos no site da Drogaria São Paulo
+- Consulta dos produtos no site desejado
 - Retorno de informações:
   - Nome do produto
   - Preço promocional (por)
@@ -36,8 +43,8 @@ Ferramenta web que permite fazer o upload de um PDF contendo códigos EAN (códi
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/ean-price-scanner.git
-cd ean-price-scanner
+git clone https://github.com/tabaresu1/pesquisador-site.git
+cd pesquisador-site
 ```
 
 ### 2. Crie um ambiente virtual
@@ -86,7 +93,7 @@ Acesse no navegador:
 
 ## ⚠️ Observações importantes
 
-- **O site da Drogaria São Paulo carrega dados via JavaScript.**  
+- **O site desejado carrega dados via JavaScript.**  
   Por isso é necessário usar **Playwright com Chromium** para simular um navegador real.
 
 - Os dados de sessão são armazenados em arquivos `.json` temporários para evitar estourar o limite de cookies.
@@ -104,4 +111,6 @@ Acesse no navegador:
 
 ---
 
-## 🐍 Desenvolvido com ❤️ em Python
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
